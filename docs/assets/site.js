@@ -2,6 +2,15 @@
 (() => {
   document.documentElement.classList.remove('no-js');
   const reduce = matchMedia('(prefers-reduced-motion: reduce)').matches;
+  const T = document.documentElement.lang === 'en' ? {
+    download: 'Download', starting: 'Starting download …', started: 'Download started',
+    toastWin: 'Your Windows download is starting …', toastPhone: 'Your Android download is starting …',
+    badge: 'For your device', ios: 'Not available yet – use Werbeschild on a PC or Android',
+  } : {
+    download: 'Herunterladen', starting: 'Download startet …', started: 'Download gestartet',
+    toastWin: 'Der Download für Windows startet …', toastPhone: 'Der Download fürs Handy startet …',
+    badge: 'Für dein Gerät', ios: 'Noch nicht verfügbar – nutze Werbeschild am PC oder auf Android',
+  };
 
   // ---- device choice: the link itself starts the download, the page shows a little show and the matching guide ----
   const choices = document.querySelectorAll('.choice[data-target]');
@@ -25,7 +34,7 @@
   function reset(tile) {
     clearTimeout(tile._timer);
     tile.classList.remove('loading', 'done', 'active');
-    label(tile, 'Herunterladen');
+    label(tile, T.download);
   }
 
   function burst(tile) {
@@ -49,16 +58,16 @@
     tile.classList.add('active');
     if (reduce) {
       tile.classList.add('done');
-      label(tile, 'Download gestartet');
+      label(tile, T.started);
       return;
     }
     void tile.offsetWidth; // restart the animation on a second click
     tile.classList.add('loading');
-    label(tile, 'Download startet …');
+    label(tile, T.starting);
     tile._timer = setTimeout(() => {
       tile.classList.remove('loading');
       tile.classList.add('done');
-      label(tile, 'Download gestartet');
+      label(tile, T.started);
       burst(tile);
     }, 1300);
   }
@@ -78,7 +87,7 @@
   choices.forEach((c) => c.addEventListener('click', () => {
     animate(c);
     showGuide(c.dataset.target);
-    say(c.dataset.target === 'win' ? 'Der Download für Windows startet …' : 'Der Download fürs Handy startet …');
+    say(c.dataset.target === 'win' ? T.toastWin : T.toastPhone);
     const guide = document.getElementById('guide-' + c.dataset.target);
     setTimeout(() => guide.scrollIntoView({ behavior: reduce ? 'auto' : 'smooth', block: 'nearest' }), 900);
   }));
@@ -92,12 +101,12 @@
   if (recommended) {
     const badge = document.createElement('span');
     badge.className = 'badge';
-    badge.textContent = 'Für dein Gerät';
+    badge.textContent = T.badge;
     document.getElementById(recommended).appendChild(badge);
   }
   if (isIOS) {
     const off = document.querySelector('.choice.off small');
-    if (off) off.textContent = 'Noch nicht verfügbar – nutze Werbeschild am PC oder auf Android';
+    if (off) off.textContent = T.ios;
   }
 
   // ---- gentle reveal on scroll ----
