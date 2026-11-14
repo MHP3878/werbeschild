@@ -20,11 +20,20 @@
 
 ## ✨ Funktionen
 
-| | |
-|---|---|
-| 🛡️ **Werbung & Tracker weg** – systemweit, in allen Browsern, Apps und Spielen | 👪 **Kinderschutz mit Eltern-PIN** – jugendfreie Suche, YouTube-Jugendschutz, Umgehungssperre |
-| 🚫 **Betrug & Fake-Shops** – Phishing, Abzocke und Glücksspiel werden gesperrt | 🧱 **Sperrseite statt Fehler** *(PC)* – erklärt, warum eine Seite gesperrt ist |
-| 🎮 **Gaming-Modus** *(PC)* – Höchstleistung, gedrosselte Downloads, VPN pausiert | 🔒 **Privat & sicher** – Filter läuft auf dem Gerät, signierte automatische Updates |
+<table>
+  <tr>
+    <td width="50%">🛡️ <b>Werbung &amp; Tracker weg</b><br>Systemweit – in allen Browsern, Apps und Spielen.</td>
+    <td width="50%">👪 <b>Kinderschutz mit Eltern-PIN</b><br>Jugendfreie Suche, YouTube-Jugendschutz, Umgehungssperre.</td>
+  </tr>
+  <tr>
+    <td>🚫 <b>Betrug &amp; Fake-Shops</b><br>Phishing, Abzocke und Glücksspiel werden gesperrt.</td>
+    <td>🧱 <b>Sperrseite statt Fehler</b> <sub>(PC)</sub><br>Erklärt, warum eine Seite gesperrt ist – Eltern geben mit PIN frei.</td>
+  </tr>
+  <tr>
+    <td>🎮 <b>Gaming-Modus</b> <sub>(PC)</sub><br>Höchstleistung, gedrosselte Downloads, VPN pausiert.</td>
+    <td>🔒 <b>Privat &amp; sicher</b><br>Filter läuft auf dem Gerät, signierte automatische Updates.</td>
+  </tr>
+</table>
 
 ## 📸 So sieht es aus
 
