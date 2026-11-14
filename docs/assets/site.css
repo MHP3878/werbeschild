@@ -182,7 +182,41 @@ section { padding: 90px 0; }
 .guide .note { margin: 18px 0 0; font-size: 14.5px; color: var(--text-2); display: flex; gap: 10px; align-items: flex-start; }
 .guide .note svg.i { color: var(--c-amber); width: 19px; height: 19px; margin-top: 2px; }
 .guide .again { margin-top: 14px; font-size: 14.5px; color: var(--text-3); }
-.more-links { text-align: center; margin-top: 22px; color: var(--text-3); font-size: 14.5px; }
+.more-links { display: flex; justify-content: center; flex-wrap: wrap; gap: 10px; margin-top: 22px; }
+.gh-btn svg.i { width: 18px; height: 18px; }
+.top .gh-btn { margin-left: 6px; }
+
+/* ---------- download animation ---------- */
+.choice .c-icon { position: relative; }
+.choice .c-icon svg.i { position: absolute; transition: opacity .25s, transform .35s cubic-bezier(.3, 1.5, .5, 1); }
+.choice .ic-arrow, .choice .ic-done { opacity: 0; transform: scale(.4); }
+.choice .ring {
+  position: absolute; inset: -12px; border-radius: 50%; padding: 3px; opacity: 0; transition: opacity .3s;
+  background: conic-gradient(from 0deg, transparent 0 18%, #22d3ee 40%, #6366f1 65%, #a855f7 88%, transparent 100%);
+  -webkit-mask: linear-gradient(#000 0 0) content-box, linear-gradient(#000 0 0); -webkit-mask-composite: xor;
+  mask: linear-gradient(#000 0 0) content-box, linear-gradient(#000 0 0); mask-composite: exclude;
+}
+.choice.loading .ring { opacity: 1; animation: ring-spin .9s linear infinite; }
+.choice.loading .ic-dev { opacity: 0; transform: scale(.4); }
+.choice.loading .ic-arrow { opacity: 1; transform: none; animation: arrow-drop .7s ease-in-out infinite; }
+.choice.loading .c-icon { animation: icon-pulse .9s ease-in-out infinite; }
+.choice.done .ic-dev, .choice.done .ic-arrow { opacity: 0; transform: scale(.4); }
+.choice.done .ic-done { opacity: 1; transform: none; stroke-width: 2.6; }
+.choice.done .c-icon { background: linear-gradient(135deg, #34d399, #22d3ee); box-shadow: 0 14px 40px -8px rgba(52, 211, 153, .9); animation: icon-pop .5s cubic-bezier(.3, 1.6, .5, 1); }
+.choice.done .go { color: #6ee7b7; }
+.spark { position: absolute; left: 50%; top: 67px; width: 8px; height: 8px; margin: -4px 0 0 -4px; border-radius: 50%; pointer-events: none; background: var(--c); box-shadow: 0 0 10px var(--c); animation: spark .9s cubic-bezier(.15, .7, .3, 1) forwards; }
+.guide.is-open .steps li { animation: step-in .55s cubic-bezier(.2, .8, .2, 1) both; }
+.guide.is-open .steps li:nth-child(2) { animation-delay: .08s; }
+.guide.is-open .steps li:nth-child(3) { animation-delay: .16s; }
+.guide.is-open .steps li:nth-child(4) { animation-delay: .24s; }
+.guide.is-open { animation: guide-in .45s ease both; }
+@keyframes ring-spin { to { transform: rotate(360deg); } }
+@keyframes arrow-drop { 0%, 100% { transform: translateY(-3px); } 50% { transform: translateY(4px); } }
+@keyframes icon-pulse { 0%, 100% { transform: scale(1); } 50% { transform: scale(1.06); } }
+@keyframes icon-pop { 0% { transform: scale(.8); } 60% { transform: scale(1.12); } 100% { transform: scale(1); } }
+@keyframes spark { from { transform: translate(0, 0) scale(1); opacity: 1; } to { transform: translate(var(--dx), var(--dy)) scale(.2); opacity: 0; } }
+@keyframes step-in { from { opacity: 0; transform: translateY(14px); } to { opacity: 1; transform: none; } }
+@keyframes guide-in { from { opacity: 0; transform: translateY(10px); } to { opacity: 1; transform: none; } }
 
 /* ---------- faq ---------- */
 .faq { max-width: 860px; margin: 0 auto; display: grid; gap: 12px; }
@@ -241,6 +275,8 @@ footer a { color: var(--text-2); }
   .reveal { opacity: 1; transform: none; transition: none; }
   .window, .phone { transform: none !important; }
   .choice, .feature, .btn { transition: none; }
+  .choice .ring, .choice .c-icon, .choice .ic-arrow, .guide.is-open, .guide.is-open .steps li { animation: none !important; }
+  .spark { display: none; }
 }
 
 /* ---------- responsive ---------- */
@@ -258,6 +294,8 @@ footer a { color: var(--text-2); }
   .wrap { padding: 0 16px; }
   .top .wrap { gap: 12px; }
   .nav { display: none; }
+  .top .gh-btn span { display: none; }
+  .top .gh-btn { padding: 10px 11px; }
   .top .btn { margin-left: auto; }
   section { padding: 64px 0; }
   .features { grid-template-columns: 1fr; }

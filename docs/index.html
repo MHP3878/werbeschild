@@ -30,6 +30,7 @@
     <symbol id="i-refresh" viewBox="0 0 24 24"><path d="M20 12a8 8 0 11-2.3-5.7L20 8.5"/><path d="M20 3.5v5h-5"/></symbol>
     <symbol id="i-pc" viewBox="0 0 24 24"><rect x="2.5" y="4" width="19" height="12.5" rx="2"/><path d="M8.5 20.5h7M12 16.5v4"/></symbol>
     <symbol id="i-phone" viewBox="0 0 24 24"><rect x="6" y="2" width="12" height="20" rx="2.6"/><path d="M10.5 18.5h3"/></symbol>
+    <symbol id="i-github" viewBox="0 0 16 16"><path fill="currentColor" stroke="none" d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.01 8.01 0 0016 8c0-4.42-3.58-8-8-8z"/></symbol>
     <symbol id="i-sparkle" viewBox="0 0 24 24"><path d="M12 3l1.8 5.2L19 10l-5.2 1.8L12 17l-1.8-5.2L5 10l5.2-1.8z"/><path d="M19 15l.8 2.2L22 18l-2.2.8L19 21l-.8-2.2L16 18l2.2-.8z"/></symbol>
   </svg>
 
@@ -41,6 +42,7 @@
         <a href="#pc-und-handy" class="hide-m">PC &amp; Handy</a>
         <a href="#fragen">Fragen</a>
       </nav>
+      <a class="btn ghost small gh-btn" href="https://github.com/MHP3878/werbeschild" title="Werbeschild auf GitHub"><svg class="i" aria-hidden="true"><use href="#i-github"/></svg><span>GitHub</span></a>
       <a class="btn primary small" href="#installieren"><svg class="i" aria-hidden="true"><use href="#i-download"/></svg>Installieren</a>
     </div>
   </header>
@@ -171,16 +173,16 @@
         <div class="card picker reveal">
           <div class="choices">
             <a class="choice" id="pick-win" data-target="win" href="https://github.com/MHP3878/werbeschild/releases/latest/download/Werbeschild-Setup.exe">
-              <span class="c-icon"><svg class="i" aria-hidden="true"><use href="#i-pc"/></svg></span>
+              <span class="c-icon"><span class="ring" aria-hidden="true"></span><svg class="i ic-dev" aria-hidden="true"><use href="#i-pc"/></svg><svg class="i ic-arrow" aria-hidden="true"><use href="#i-download"/></svg><svg class="i ic-done" aria-hidden="true"><use href="#i-check"/></svg></span>
               <b>Windows-PC</b>
               <small>Windows 10 &amp; 11 · ca. 3 MB</small>
-              <span class="go"><svg class="i" aria-hidden="true"><use href="#i-download"/></svg>Herunterladen</span>
+              <span class="go"><svg class="i" aria-hidden="true"><use href="#i-download"/></svg><span class="go-t">Herunterladen</span></span>
             </a>
             <a class="choice" id="pick-android" data-target="android" href="https://github.com/MHP3878/werbeschild/releases/latest/download/Werbeschild-Android.apk">
-              <span class="c-icon"><svg class="i" aria-hidden="true"><use href="#i-phone"/></svg></span>
+              <span class="c-icon"><span class="ring" aria-hidden="true"></span><svg class="i ic-dev" aria-hidden="true"><use href="#i-phone"/></svg><svg class="i ic-arrow" aria-hidden="true"><use href="#i-download"/></svg><svg class="i ic-done" aria-hidden="true"><use href="#i-check"/></svg></span>
               <b>Android-Handy</b>
               <small>Android 8 oder neuer · unter 1 MB</small>
-              <span class="go"><svg class="i" aria-hidden="true"><use href="#i-download"/></svg>Herunterladen</span>
+              <span class="go"><svg class="i" aria-hidden="true"><use href="#i-download"/></svg><span class="go-t">Herunterladen</span></span>
             </a>
             <div class="choice off" aria-disabled="true">
               <span class="c-icon"><svg class="i" aria-hidden="true"><use href="#i-phone"/></svg></span>
@@ -214,7 +216,10 @@
             <p class="again">Download hat nicht gestartet? <a href="https://github.com/MHP3878/werbeschild/releases/latest/download/Werbeschild-Android.apk">Noch einmal versuchen</a></p>
           </div>
         </div>
-        <p class="more-links"><a href="https://github.com/MHP3878/werbeschild/releases">Alle Versionen &amp; Neuigkeiten</a></p>
+        <div class="more-links">
+          <a class="btn ghost small" href="https://github.com/MHP3878/werbeschild"><svg class="i" aria-hidden="true"><use href="#i-github"/></svg>Projekt auf GitHub</a>
+          <a class="btn ghost small" href="https://github.com/MHP3878/werbeschild/releases"><svg class="i" aria-hidden="true"><use href="#i-refresh"/></svg>Alle Versionen &amp; Neuigkeiten</a>
+        </div>
       </div>
     </section>
 
@@ -272,6 +277,7 @@
         <a href="datenschutz.html">Datenschutz</a>
         <a href="impressum.html">Impressum</a>
         <a href="https://github.com/MHP3878/werbeschild/releases">Alle Versionen</a>
+        <a href="https://github.com/MHP3878/werbeschild">GitHub</a>
       </nav>
     </div>
   </footer>
