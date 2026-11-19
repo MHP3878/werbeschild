@@ -16,13 +16,13 @@
 
 <br>
 
-**Werbeschild** blockt Werbung, Tracker, Betrugs- und Glücksspielseiten auf dem ganzen PC und Handy – in jedem Browser, jeder App und jedem Spiel. Damit Kinder nicht aus Versehen auf Werbung klicken und etwas kaufen. Kostenlos, ohne Konto, ohne Werbung.
+**Werbeschild** blockt die meiste Werbung, Tracker, Betrugs- und Glücksspielseiten auf dem ganzen PC und Handy – in Browsern, Apps und Spielen. Damit Kinder nicht aus Versehen auf Werbung klicken und etwas kaufen. Kostenlos, ohne Konto, ohne Werbung.
 
 ## ✨ Funktionen
 
 <table>
   <tr>
-    <td width="50%">🛡️ <b>Werbung &amp; Tracker weg</b><br>Systemweit – in allen Browsern, Apps und Spielen.</td>
+    <td width="50%">🛡️ <b>Werbung &amp; Tracker weg</b><br>Systemweit – in Browsern, Apps und Spielen.</td>
     <td width="50%">👪 <b>Kinderschutz mit Eltern-PIN</b><br>Jugendfreie Suche, YouTube-Jugendschutz, Umgehungssperre.</td>
   </tr>
   <tr>
@@ -54,6 +54,18 @@
 **Android 8 oder neuer** – [Werbeschild-Android.apk herunterladen](https://github.com/MHP3878/werbeschild/releases/latest/download/Werbeschild-Android.apk)
 1. Datei öffnen und „Unbekannte Apps installieren“ für den Browser erlauben (Google lässt systemweite Werbeblocker nicht in den Play Store).
 2. Installieren, App öffnen, Modus wählen und die Anfrage für das lokale VPN bestätigen.
+
+**Browser-Plugin „Plus für YouTube“ (Edge, Chrome, Brave)** – [Plus-fuer-YouTube.zip herunterladen](https://github.com/MHP3878/werbeschild/releases/latest/download/Plus-fuer-YouTube.zip)
+1. ZIP entpacken, `edge://extensions` bzw. `chrome://extensions` öffnen und „Entwicklermodus“ einschalten.
+2. „Entpackte Erweiterung laden“ und den Ordner wählen. (Noch nicht im Browser-Store – deshalb dieser Weg.)
+
+## 🎬 YouTube &amp; Netflix – was wirklich geht
+
+Dort kommt die Werbung von denselben Servern wie die Videos, ein Filter allein reicht nicht:
+
+* **YouTube im Browser (PC):** „Plus für YouTube“ entfernt die Werbung – mit dem normalen YouTube-Konto.
+* **YouTube-App (Android):** Werbung wird stumm geschaltet, abgedunkelt und übersprungen, sobald YouTube es zulässt – ganz weg geht sie dort nicht.
+* **Netflix (Abo mit Werbung):** im Browser werden Werbepausen entfernt oder stumm vorgespult, in der App stumm geschaltet und abgedunkelt.
 
 Ausführliche Anleitung und Antworten auf häufige Fragen: **[mhp3878.github.io/werbeschild](https://mhp3878.github.io/werbeschild/)**
 

@@ -147,7 +147,7 @@ section { padding: 90px 0; }
 .picker { max-width: 980px; margin: 0 auto; padding: 34px; }
 .picker h3 { text-align: center; font: 700 22px var(--font-display); margin: 0 0 6px; }
 .picker > p { text-align: center; color: var(--text-2); margin: 0 0 26px; }
-.choices { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; }
+.choices { display: grid; grid-template-columns: repeat(4, 1fr); gap: 14px; }
 .choice {
   position: relative; display: flex; flex-direction: column; align-items: center; text-align: center; gap: 8px; padding: 30px 20px 24px;
   border-radius: 20px; border: 1.5px solid var(--stroke-2); background: rgba(10, 14, 32, .55); color: var(--text); cursor: pointer;
@@ -157,7 +157,7 @@ section { padding: 90px 0; }
 .choice.active { border-color: transparent; background: linear-gradient(rgba(14, 18, 40, .92), rgba(14, 18, 40, .92)) padding-box, var(--grad) border-box; box-shadow: 0 24px 60px -24px rgba(139, 92, 246, .95); }
 .choice .c-icon { width: 74px; height: 74px; border-radius: 22px; display: grid; place-items: center; background: var(--grad); box-shadow: 0 14px 34px -10px rgba(99, 102, 241, .9); margin-bottom: 8px; }
 .choice .c-icon svg.i { width: 36px; height: 36px; color: #fff; stroke-width: 1.7; }
-.choice b { font: 700 21px var(--font-display); }
+.choice b { font: 700 20px var(--font-display); }
 .choice small { color: var(--text-2); font-size: 14px; }
 .choice .go { margin-top: 10px; display: inline-flex; align-items: center; gap: 8px; font-weight: 700; color: #c7d2fe; font-size: 15px; }
 .choice .go svg.i { width: 18px; height: 18px; }
@@ -292,7 +292,33 @@ footer a { color: var(--text-2); }
   .spark { display: none; }
 }
 
+/* ---------- honest note, YouTube & Netflix, "what changes on your PC" ---------- */
+.honest { margin: 20px 0 0; max-width: 560px; font-size: 14.5px; color: var(--text-3); }
+.yt-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 18px; max-width: 980px; margin: 0 auto; }
+.yt { padding: 24px 26px; }
+.yt h3 { font: 700 19px/1.3 var(--font-display); margin: 0 0 8px; }
+.yt p { color: var(--text-2); margin: 0; font-size: 15.5px; }
+.yt-link { display: inline-flex; align-items: center; gap: 6px; margin-top: 12px; font-weight: 700; font-size: 15px; }
+.yt-link svg.i { width: 17px; height: 17px; }
+.yt-note { max-width: 980px; margin: 20px auto 0; padding: 16px 20px; border-radius: 16px; border: 1px solid var(--stroke); background: rgba(148, 163, 255, .05); color: var(--text-2); font-size: 15px; }
+.yt-note b { color: var(--text); }
+.choice small.meta { color: var(--text-3); font-size: 12.5px; line-height: 1.35; }
+.changes { max-width: 980px; margin: 22px auto 0; padding: 30px 34px; }
+.changes h3 { font: 700 22px var(--font-display); margin: 0 0 8px; }
+.changes > p { color: var(--text-2); margin: 0 0 22px; }
+.changes .checks { grid-template-columns: 1fr 1fr; gap: 16px 30px; }
+.steps.five { grid-template-columns: repeat(5, 1fr); }
+.guide.is-open .steps li:nth-child(5) { animation-delay: .32s; }
+.steps code { font: 600 13px ui-monospace, Consolas, "Cascadia Mono", monospace; color: #c7d2fe; overflow-wrap: anywhere; }
+
+/* ---------- phones: "Installieren" always within reach ---------- */
+.m-bar { display: none; }
+
 /* ---------- responsive ---------- */
+@media (max-width: 1140px) {
+  .nav a.hide-l { display: none; }   /* the header must never get wider than the window */
+  .top .wrap { gap: 20px; }
+}
 @media (max-width: 980px) {
   .hero { padding-top: 54px; }
   .hero .wrap { grid-template-columns: 1fr; gap: 70px; }
@@ -300,24 +326,40 @@ footer a { color: var(--text-2); }
   .features { grid-template-columns: 1fr 1fr; }
   .show, .show.flip { grid-template-columns: 1fr; gap: 36px; }
   .show.flip .show-media { order: 0; }
-  .steps { grid-template-columns: 1fr 1fr; }
+  .choices { grid-template-columns: 1fr 1fr; }
+  .steps, .steps.five { grid-template-columns: 1fr 1fr; }
   .nav a.hide-m { display: none; }
   .news { grid-template-columns: 1fr; }
 }
 @media (max-width: 680px) {
   .wrap { padding: 0 16px; }
-  .top .wrap { gap: 12px; }
+  .top .wrap { gap: 10px; }
   .nav { display: none; }
   .top .gh-btn span { display: none; }
-  .top .gh-btn { padding: 10px 11px; }
-  .top .btn { margin-left: auto; }
+  .top .gh-btn { padding: 10px 11px; margin-left: 0; }
+  .top .lang { margin-left: auto; }
+  .top .btn.primary { display: none; }   /* the bar at the bottom takes over - the header never gets wider than the phone */
   section { padding: 64px 0; }
   .features { grid-template-columns: 1fr; }
   .choices { grid-template-columns: 1fr; }
   .picker { padding: 22px 16px; }
-  .steps { grid-template-columns: 1fr; }
-  .phone { width: 38%; right: 0; bottom: -30px; }
+  .steps, .steps.five { grid-template-columns: 1fr; }
+  .yt-grid { grid-template-columns: 1fr; }
+  .changes { padding: 24px 18px; }
+  .changes .checks { grid-template-columns: 1fr; }
+  .phone { width: 38%; min-width: 118px; right: 0; bottom: -30px; }
+  .demo-note { max-width: 56%; }
   .window { transform: none; }
   .cta .btn { flex: 1 1 100%; }
   footer nav { margin-left: 0; }
+  body { padding-bottom: 74px; }
+  .m-bar {
+    display: block; position: fixed; left: 0; right: 0; bottom: 0; z-index: 60; padding: 10px 16px calc(10px + env(safe-area-inset-bottom, 0px));
+    background: rgba(6, 9, 20, .9); backdrop-filter: blur(16px); -webkit-backdrop-filter: blur(16px); border-top: 1px solid var(--stroke);
+    transition: transform .3s ease;
+  }
+  .m-bar .btn { width: 100%; padding: 13px 20px; }
+  .m-bar.away { transform: translateY(110%); }
+  .toast { bottom: 88px; }
 }
+@media (max-width: 680px) and (prefers-reduced-motion: reduce) { .m-bar { transition: none; } }

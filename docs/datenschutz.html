@@ -41,7 +41,7 @@
       <li>Keine Cookies, keine Analyse- oder Werbedienste, kein Tracking.</li>
       <li>Keine externen Schriftarten oder Skripte – alles kommt von dieser Seite.</li>
       <li>Kein Kontaktformular und keine Anmeldung.</li>
-      <li>Die Downloads (Windows-Installer und Android-App) werden ebenfalls von GitHub ausgeliefert.</li>
+      <li>Die Downloads (Windows-Installer, Android-App und Browser-Plugin) werden ebenfalls von GitHub ausgeliefert.</li>
     </ul>
 
     <h2>3. Werbeschild für Windows und Android</h2>
@@ -49,9 +49,12 @@
     <p>Damit Seiten und Apps funktionieren, braucht jedes Gerät Adress-Auskünfte (DNS). Erlaubte Abfragen schickt Werbeschild <b>verschlüsselt</b> an den in den Einstellungen gewählten DNS-Dienst – <a href="https://adguard-dns.io/de/privacy.html">AdGuard DNS</a> oder <a href="https://www.cloudflare.com/de-de/privacypolicy/">Cloudflare</a> (Familien- bzw. Sicherheitsfilter). Dieser Dienst sieht den angefragten Namen (z. B. „wikipedia.org“) und die IP-Adresse deines Anschlusses. Ohne Werbeschild ginge dieselbe Abfrage unverschlüsselt an deinen Internetanbieter.</p>
     <ul>
       <li><b>Filterlisten:</b> Werbeschild lädt öffentliche Sperrlisten von den Original-Quellen (GitHub, jsDelivr, AdGuard). Dabei wird nur die Liste abgerufen.</li>
-      <li><b>Updates (Windows):</b> Werbeschild fragt bei GitHub nach einer neuen Version und lädt sie dort herunter.</li>
+      <li><b>Updates:</b> Werbeschild für Windows und die Android-App (seit Version 1.0.4) fragen bei GitHub nach einer neuen Version und laden sie dort herunter. GitHub sieht dabei wie bei jedem Abruf deine IP-Adresse.</li>
       <li><b>Android ohne VPN:</b> Schaltest du das VPN aus, kann Android über „Privates DNS“ den Dienst AdGuard DNS nutzen.</li>
+      <li><b>Sperrseite (Windows):</b> Damit die Sperrseite auch bei https-Adressen ohne Browser-Warnung erscheint, legt Werbeschild auf deinem PC ein eigenes Zertifikat im Windows-Zertifikatsspeicher an. Es bleibt auf dem PC, der Schlüssel dazu wird nirgendwohin übertragen, und beim Deinstallieren wird es wieder entfernt.</li>
       <li><b>Browser-Erweiterung „Live-Sperre“:</b> Sie fragt nur das Werbeschild-Programm auf demselben PC, ob eine Seite gesperrt ist. Nichts geht ins Internet, nichts wird gespeichert.</li>
+      <li><b>YouTube- und Netflix-Plugin der Android-App:</b> Es erkennt Werbung an dem, was die YouTube- bzw. Netflix-App gerade anzeigt, und arbeitet nur auf dem Gerät. Es überträgt nichts.</li>
+      <li><b>Browser-Plugin „Plus für YouTube“ (PC):</b> Es arbeitet im Browser auf youtube.com und netflix.com. Seine Einstellungen speichert der Browser (ist dort die Synchronisierung eingeschaltet, gleicht der Browser sie über dein Browser-Konto ab). Nur wenn du den Schalter „Sponsoren überspringen“ einschaltest (Standard: aus), fragt das Plugin den Dienst <a href="https://sponsor.ajay.app/">SponsorBlock</a> nach den Werbe-Teilen eines Videos. Übertragen werden dabei nur die ersten vier Zeichen einer Prüfsumme der Video-Kennung – nicht, welches Video du ansiehst; der Dienst sieht deine IP-Adresse.</li>
     </ul>
 
     <h2>4. Deine Rechte</h2>

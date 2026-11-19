@@ -5,10 +5,12 @@
   const T = document.documentElement.lang === 'en' ? {
     download: 'Download', starting: 'Starting download …', started: 'Download started',
     toastWin: 'Your Windows download is starting …', toastPhone: 'Your Android download is starting …',
+    toastPlus: 'The browser plug-in download is starting …',
     badge: 'For your device', ios: 'Not available yet – use Werbeschild on a PC or Android',
   } : {
     download: 'Herunterladen', starting: 'Download startet …', started: 'Download gestartet',
     toastWin: 'Der Download für Windows startet …', toastPhone: 'Der Download fürs Handy startet …',
+    toastPlus: 'Der Download des Browser-Plugins startet …',
     badge: 'Für dein Gerät', ios: 'Noch nicht verfügbar – nutze Werbeschild am PC oder auf Android',
   };
 
@@ -81,16 +83,25 @@
     });
   }
 
-  // Before a choice both guides stay hidden (with JavaScript off, both are simply visible).
+  // Before a choice all guides stay hidden (with JavaScript off, they are simply all visible).
   guides.forEach((g) => { g.hidden = true; });
 
   choices.forEach((c) => c.addEventListener('click', () => {
     animate(c);
     showGuide(c.dataset.target);
-    say(c.dataset.target === 'win' ? T.toastWin : T.toastPhone);
+    say({ win: T.toastWin, android: T.toastPhone, plus: T.toastPlus }[c.dataset.target] || T.starting);
     const guide = document.getElementById('guide-' + c.dataset.target);
-    setTimeout(() => guide.scrollIntoView({ behavior: reduce ? 'auto' : 'smooth', block: 'nearest' }), 900);
+    if (guide) setTimeout(() => guide.scrollIntoView({ behavior: reduce ? 'auto' : 'smooth', block: 'nearest' }), 900);
   }));
+
+  // ---- phones: the "Installieren" bar at the bottom steps aside while the download tiles are on screen ----
+  const bar = document.getElementById('mBar');
+  const install = document.getElementById('installieren');
+  if (bar && install && 'IntersectionObserver' in window) {
+    new IntersectionObserver((entries) => {
+      entries.forEach((e) => bar.classList.toggle('away', e.isIntersecting));
+    }, { threshold: 0.05 }).observe(install);
+  }
 
   // ---- recommend the right download for the visitor's device ----
   const ua = navigator.userAgent || '';
